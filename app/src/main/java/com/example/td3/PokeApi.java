@@ -1,8 +1,9 @@
 package com.example.td3;
 
+import com.example.td3.presentation.model.RestPokemonResponse;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.Query;
 
 public interface PokeApi {
 
