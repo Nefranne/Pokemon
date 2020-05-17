@@ -6,6 +6,7 @@ import android.widget.Toast;
 
 import com.example.td3.Constant;
 import com.example.td3.PokeApi;
+import com.example.td3.presentation.injection;
 import com.example.td3.presentation.model.Pokemon;
 import com.example.td3.presentation.model.RestPokemonResponse;
 import com.example.td3.presentation.view.MainActivity;
@@ -46,12 +47,7 @@ public class MainController {
         }
     }
     private void makeApiCall () {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(Constant.BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create(gson))
-                .build();
-        final PokeApi pokeApi = retrofit.create(PokeApi.class);
-        Call<RestPokemonResponse> call = pokeApi.getPokemonResponse();
+        Call<RestPokemonResponse> call = injection.getPokeApi().getPokemonResponse();
         call.enqueue(new Callback<RestPokemonResponse>() {
             @Override
             public void onResponse(Call<RestPokemonResponse> call, Response<RestPokemonResponse> response) {

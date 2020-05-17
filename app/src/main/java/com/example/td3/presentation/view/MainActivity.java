@@ -13,6 +13,7 @@ import com.example.td3.Constant;
 import com.example.td3.PokeApi;
 import com.example.td3.R;
 import com.example.td3.presentation.controller.MainController;
+import com.example.td3.presentation.injection;
 import com.example.td3.presentation.model.Pokemon;
 import com.example.td3.presentation.model.RestPokemonResponse;
 import com.google.gson.Gson;
@@ -44,10 +45,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
        controller= new MainController(
                this,
-             new GsonBuilder()
-                .setLenient()
-                .create(),
-        getSharedPreferences("application_esiea", Context.MODE_PRIVATE)
+                injection.getGSon(),
+                injection.getsharedPreferenceInstance(getApplicationContext());
        );
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
