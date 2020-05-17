@@ -43,13 +43,14 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-       controller= new MainController(
-               this,
-                injection.getGSon(),
-                injection.getsharedPreferenceInstance(getApplicationContext());
-       );
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        controller= new MainController(
+               this,
+                injection.getGSon(),
+                injection.getsharedPreferenceInstance(getApplicationContext())
+        );
+
        // controller = new MainController();
         controller.onStart();
     }

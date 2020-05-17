@@ -17,16 +17,16 @@ public class injection { // j'ai eu la flemme de le renommer en Singletons :)
     private static PokeApi pokeApiInstance;
     private static SharedPreferences sharedPreferenceInstance;
 
-    public static Gson getGSon () {
-        if(gsonInstance == null){
-        gsonInstance = new GsonBuilder()
-                .setLenient()
-                .create();
+    public static Gson getGSon() {
+        if (gsonInstance == null) {
+            gsonInstance = new GsonBuilder()
+                    .setLenient()
+                    .create();
         }
         return gsonInstance;
     }
 
-    public static PokeApi getPokeApi () {
+    public static PokeApi getPokeApi() {
         if (pokeApiInstance == null) {
             Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl(Constant.BASE_URL)
@@ -38,10 +38,10 @@ public class injection { // j'ai eu la flemme de le renommer en Singletons :)
     }
 
 
-    public static SharedPreferences getsharedPreferenceInstance (Context context) {
-        if(sharedPreferenceInstance == null){
+    public static SharedPreferences getsharedPreferenceInstance(Context context) {
+        if (sharedPreferenceInstance == null) {
             sharedPreferenceInstance = context.getSharedPreferences("application_esiea", Context.MODE_PRIVATE);
+        }
         return sharedPreferenceInstance;
     }
-
 }
