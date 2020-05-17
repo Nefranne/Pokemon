@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.method.SingleLineTransformationMethod;
 import android.widget.Toast;
 
+import com.example.td3.Constant;
 import com.example.td3.R;
 import com.example.td3.presentation.controller.MainController;
 import com.example.td3.presentation.injection;
@@ -83,7 +86,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void navigateToTheDetails(Pokemon pokemon) {
-        Toast.makeText(this, "Tu navigues", Toast.LENGTH_SHORT).show();
+        Intent myIntent = new Intent(MainActivity.this, DetailActivity.class);
+        myIntent.putExtra(Constant.KEY_POKEMON, injection.getGSon().toJson(pokemon));
+        MainActivity.this.startActivity(myIntent);
     }
 }
 
