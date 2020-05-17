@@ -88,7 +88,7 @@ public class MainController {
         }
     }
     public void onItemClick(Pokemon pokemon) {
-
+        view.navigateToTheDetails(pokemon);
     }
     public void onButtonClick() {
 
