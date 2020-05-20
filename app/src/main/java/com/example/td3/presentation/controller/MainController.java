@@ -68,7 +68,9 @@ public class MainController {
             }
         });
     }
-    private void saveList(List<Pokemon> pokemonList) {
+
+
+     private void saveList(List<Pokemon> pokemonList) {
         String jsonString = gson.toJson(pokemonList);
         sharedPreferences
                 .edit()

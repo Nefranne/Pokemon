@@ -3,10 +3,13 @@ package com.example.td3.presentation.view;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.example.td3.Constant;
 import com.example.td3.R;
 import com.example.td3.presentation.model.Pokemon;
 
@@ -27,11 +30,13 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         public TextView txtHeader;
         public TextView txtFooter;
         public View layout;
+        public ImageView imageview;
         public ViewHolder(View v) {
             super(v);
             layout = v;
             txtHeader = (TextView) v.findViewById(R.id.firstLine);
             txtFooter = (TextView) v.findViewById(R.id.secondLine);
+            imageview = (ImageView) v.findViewById(R.id.icon);
         }
     }
     public void add (int position, Pokemon item) {
@@ -70,6 +75,9 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         final Pokemon currentPokemon = values.get(position);
         holder.txtHeader.setText(currentPokemon.getName());
         holder.txtFooter.setText(currentPokemon.getUrl());
+        Glide.with(holder.imageview)
+                .load(Constant.URL_IMAGE + ( position + 1 ) + ".png")
+                .into(holder.imageview);
         holder.itemView.setOnClickListener (new View.OnClickListener (){
             @Override public void onClick (View v) {
                     Listener.onItemClick(currentPokemon);
