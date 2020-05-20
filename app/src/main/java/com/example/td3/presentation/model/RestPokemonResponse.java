@@ -26,7 +26,7 @@ public class RestPokemonResponse {
     public void setNext(String next) {
         this.next = next;
     }
-    //aaaaaaa
+
     public void setResults(List<Pokemon> results) {
         this.results = results;
     }
