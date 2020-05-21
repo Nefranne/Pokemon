@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.view.MainActivity">
+    android:theme= "@style/Theme.AppCompat.DayNight.NoActionBar"
+    tools:context=".presentation.view.MainActivity"
+    android:background="#BA1111">
 
     <TextView
         android:id="@+id/detail_txt"
