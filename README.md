@@ -45,4 +45,4 @@ Affiche la liste des pokémons
 Affiche le pokémon en plus grand et ses détails ( les champs sont laissés par défaut le temps pour une future mise à jour ) 
 
 
-![](Images/Captureecran2.PNG)
+![](Images/captureecran2.PNG)
