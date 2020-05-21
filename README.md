@@ -37,7 +37,7 @@ Cette application utilise le pattern MVC et est codée en Java.
 Affiche la liste des pokémons 
 
 
-![](Pokemon/Images/Captureecran1.png)
+![](Images/Captureecran1.PNG)
 
 
 
@@ -45,4 +45,4 @@ Affiche la liste des pokémons
 Affiche le pokémon en plus grand et ses détails ( les champs sont laissés par défaut le temps pour une future mise à jour ) 
 
 
-![](Pokemon/Images/Captureecran2.png)
+![](Images/Captureecran2.PNG)
